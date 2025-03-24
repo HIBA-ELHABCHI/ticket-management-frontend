@@ -274,7 +274,6 @@ const NewTicketsForm = () => {
                     </div>
                     <div className="ticket-actions">
                       <button onClick={() => navigate(`/tickets/${ticket.id}`)}>Consulter</button>
-                      <button onClick={() => useAsSimilar(ticket)}>Utiliser comme modèle</button>
                     </div>
                   </div>
                 ))}

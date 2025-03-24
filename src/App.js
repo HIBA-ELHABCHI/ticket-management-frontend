@@ -7,6 +7,9 @@ import './styles.css';
 import NewTicketPage from './components/NewTicketsForm';
 import SettingsPage from './components/SettingsPage';
 import NotificationsPage from './components/NotificationsPage';
+import UsersPage from './components/UsersPage';
+import HelpPage from './components/HelpPage';
+import ReportsPage from './components/ReportsPage';
 
 function App() {
   return (
@@ -18,6 +21,13 @@ function App() {
         <Route path="/tickets/new" element={<NewTicketPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/notifications" element={<NotificationsPage />} />
+        <Route path="/users" element={<UsersPage />} />
+        <Route path="/help" element={<HelpPage />} />
+        <Route path="/reports" element={<ReportsPage />} />
+
+
+
+
 
 
 
