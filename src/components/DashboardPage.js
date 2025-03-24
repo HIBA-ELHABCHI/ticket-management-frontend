@@ -11,13 +11,13 @@ const DashboardPage = () => {
   const [sortDirection, setSortDirection] = useState('desc');
   const navigate = useNavigate();
 
-  // Données fictives pour les tickets
+  // Nouvelles données fictives pour les tickets
   const tickets = [
-    { id: 'TK-001', title: 'Problème de connexion email', status: 'new', priority: 'high', assignee: 'Martin Dupont', created: '2025-03-15', department: 'IT', lastUpdated: '2025-03-15' },
-    { id: 'TK-002', title: 'Imprimante hors service', status: 'in-progress', priority: 'medium', assignee: 'Julie Martin', created: '2025-03-16', department: 'Support', lastUpdated: '2025-03-18' },
-    { id: 'TK-003', title: 'Mise à jour logiciel', status: 'resolved', priority: 'low', assignee: 'Paul Durand', created: '2025-03-17', department: 'IT', lastUpdated: '2025-03-19' },
-    { id: 'TK-004', title: 'Erreur serveur', status: 'new', priority: 'high', assignee: 'Non assigné', created: '2025-03-18', department: 'Infrastructure', lastUpdated: '2025-03-18' },
-    { id: 'TK-005', title: 'Problème de VPN', status: 'in-progress', priority: 'medium', assignee: 'Martin Dupont', created: '2025-03-19', department: 'Sécurité', lastUpdated: '2025-03-19' },
+    { id: 'TK-101', title: 'Problème accès VPN', status: 'new', priority: 'high', assignee: 'Martin Dupont', created: '2025-03-22', department: 'Sécurité', lastUpdated: '2025-03-22' },
+    { id: 'TK-102', title: 'Mise à jour Windows échouée', status: 'in-progress', priority: 'medium', assignee: 'Julie Martin', created: '2025-03-21', department: 'IT', lastUpdated: '2025-03-22' },
+    { id: 'TK-103', title: 'Configuration email sur mobile', status: 'new', priority: 'low', assignee: 'Non assigné', created: '2025-03-20', department: 'Support', lastUpdated: '2025-03-20' },
+    { id: 'TK-104', title: 'Problème d\'impression réseau', status: 'in-progress', priority: 'high', assignee: 'Martin Dupont', created: '2025-03-19', department: 'IT', lastUpdated: '2025-03-21' },
+    { id: 'TK-105', title: 'Installation logiciel comptabilité', status: 'resolved', priority: 'medium', assignee: 'Paul Durand', created: '2025-03-18', department: 'Finance', lastUpdated: '2025-03-20' },
   ];
 
   // Récupérer les tâches assignées à l'utilisateur connecté
@@ -79,6 +79,20 @@ const DashboardPage = () => {
     // Logique de changement de statut à implémenter
   };
 
+  // Gérer le rappel d'un ticket
+  const handleRemindTicket = (ticketId) => {
+    alert(`Un rappel a été programmé pour le ticket ${ticketId}`);
+    // Logique de rappel à implémenter
+  };
+
+  // Gérer la fermeture d'un ticket
+  const handleCloseTicket = (ticketId) => {
+    if (window.confirm(`Êtes-vous sûr de vouloir fermer le ticket ${ticketId} ?`)) {
+      alert(`Le ticket ${ticketId} a été fermé avec succès`);
+      // Logique de fermeture à implémenter
+    }
+  };
+
   // Gérer le tri des tickets
   const handleSort = (field) => {
     if (sortField === field) {
@@ -103,7 +117,7 @@ const DashboardPage = () => {
     <div className="dashboard-page">
       <div className="sidebar">
         <div className="sidebar-header">
-          <img src="/logo.png" alt="TechTicket Logo" />
+          <img src="/image/ticket.png" alt="TechTicket Logo" />
           <h2>TechTicket</h2>
         </div>
         <div className="sidebar-menu">
@@ -287,6 +301,7 @@ const DashboardPage = () => {
                 <option value="Support">Support</option>
                 <option value="Infrastructure">Infrastructure</option>
                 <option value="Sécurité">Sécurité</option>
+                <option value="Finance">Finance</option>
               </select>
             </div>
 
@@ -337,6 +352,8 @@ const DashboardPage = () => {
                     <td className="actions">
                       <button onClick={() => navigate(`/tickets/${ticket.id}`)} title="Voir les détails">👁️</button>
                       <button onClick={() => handleQuickView(ticket)} title="Aperçu rapide">🔍</button>
+                      <button onClick={() => handleRemindTicket(ticket.id)} title="Programmer un rappel">⏰</button>
+                      <button onClick={() => handleCloseTicket(ticket.id)} title="Fermer le ticket">✅</button>
                       <div className="dropdown">
                         <button className="dropdown-btn">⋮</button>
                         <div className="dropdown-content">
@@ -417,6 +434,8 @@ const DashboardPage = () => {
                 <button onClick={() => navigate(`/tickets/${selectedTicket.id}`)}>Voir complet</button>
                 <button onClick={() => handleStatusChange(selectedTicket.id, 'in-progress')}>Marquer en cours</button>
                 <button onClick={() => handleStatusChange(selectedTicket.id, 'resolved')}>Marquer résolu</button>
+                <button onClick={() => handleRemindTicket(selectedTicket.id)}>Rappeler</button>
+                <button onClick={() => handleCloseTicket(selectedTicket.id)}>Fermer</button>
                 {selectedTicket.assignee === 'Non assigné' && (
                   <button onClick={() => handleAssignTicket(selectedTicket.id)}>M'assigner</button>
                 )}

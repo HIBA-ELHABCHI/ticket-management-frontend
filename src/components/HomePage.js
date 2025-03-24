@@ -8,14 +8,12 @@ const HomePage = () => {
         <div className="container">
           <div className="header-content">
             <div className="logo">
-              <img src="/logo.png" alt="TechTicket Logo" />
               <h1>TechTicket</h1>
             </div>
             <nav>
               <ul>
                 <li><a href="#features">Fonctionnalités</a></li>
                 <li><a href="#cloud">Cloud</a></li>
-                <li><a href="#pricing">Prix</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </nav>
@@ -70,47 +68,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-
-        <section id="pricing" className="pricing">
-          <div className="container">
-            <h2 className="section-title">Tarification</h2>
-            <div className="pricing-cards">
-              <div className="pricing-card">
-                <h3>Basique</h3>
-                <div className="price">19€/mois</div>
-                <ul>
-                  <li>Jusqu'à 5 utilisateurs</li>
-                  <li>Gestion des tickets de base</li>
-                  <li>Support par email</li>
-                </ul>
-                <button className="login-btn">Choisir</button>
-              </div>
-              <div className="pricing-card">
-                <h3>Pro</h3>
-                <div className="price">49€/mois</div>
-                <ul>
-                  <li>Jusqu'à 20 utilisateurs</li>
-                  <li>Fonctionnalités avancées</li>
-                  <li>Support prioritaire</li>
-                  <li>Rapports personnalisés</li>
-                </ul>
-                <button className="login-btn">Choisir</button>
-              </div>
-              <div className="pricing-card">
-                <h3>Entreprise</h3>
-                <div className="price">99€/mois</div>
-                <ul>
-                  <li>Utilisateurs illimités</li>
-                  <li>Toutes les fonctionnalités</li>
-                  <li>Support 24/7</li>
-                  <li>Intégration API</li>
-                  <li>SLA garanti</li>
-                </ul>
-                <button className="login-btn">Contacter</button>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         <section id="contact" className="contact">
           <div className="container">
@@ -146,7 +104,6 @@ const HomePage = () => {
               <ul>
                 <li><a href="#features">Fonctionnalités</a></li>
                 <li><a href="#cloud">Cloud</a></li>
-                <li><a href="#pricing">Prix</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </div>

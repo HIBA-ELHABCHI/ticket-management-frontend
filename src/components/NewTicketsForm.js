@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './createticket.css';
 
-const CreateTicketPage = () => {
+const NewTicketsForm = () => {
   const navigate = useNavigate();
   const [notifications, setNotifications] = useState(3);
   const [ticketData, setTicketData] = useState({
@@ -544,4 +544,4 @@ const CreateTicketPage = () => {
   );
 };
 
-export default CreateTicketPage;
+export default NewTicketsForm;
