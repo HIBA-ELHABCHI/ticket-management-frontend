@@ -12,7 +12,7 @@ const DashboardPage = () => {
   const navigate = useNavigate();
 
   // Nouvelles données fictives pour les tickets
-  const tickets = [
+   const tickets = [
     { id: 'TK-101', title: 'Problème accès VPN', status: 'new', priority: 'high', assignee: 'Martin Dupont', created: '2025-03-22', department: 'Sécurité', lastUpdated: '2025-03-22' },
     { id: 'TK-102', title: 'Mise à jour Windows échouée', status: 'in-progress', priority: 'medium', assignee: 'Julie Martin', created: '2025-03-21', department: 'IT', lastUpdated: '2025-03-22' },
     { id: 'TK-103', title: 'Configuration email sur mobile', status: 'new', priority: 'low', assignee: 'Non assigné', created: '2025-03-20', department: 'Support', lastUpdated: '2025-03-20' },
@@ -124,7 +124,7 @@ const DashboardPage = () => {
           <Link to="/dashboard" className="menu-item active">
             <span className="icon">📊</span> Tableau de bord
           </Link>
-          <Link to="/tickets" className="menu-item">
+          <Link to="/tickets/new" className="menu-item">
             <span className="icon">🎫</span> Tickets
           </Link>
           <Link to="/users" className="menu-item">
@@ -169,15 +169,7 @@ const DashboardPage = () => {
               🔔
               {notifications > 0 && <span className="badge">{notifications}</span>}
             </div>
-            <img src="/user-avatar.png" alt="User Avatar" />
-            <div className="user-dropdown">
-              <span className="user-name">Martin Dupont</span>
-              <div className="dropdown-content">
-                <Link to="/profile">Mon profil</Link>
-                <Link to="/settings">Paramètres</Link>
-                <Link to="/">Déconnexion</Link>
-              </div>
-            </div>
+           
           </div>
         </div>
 
@@ -205,23 +197,7 @@ const DashboardPage = () => {
             </div>
           </div>
 
-          <div className="quick-actions">
-            <h2>Actions rapides</h2>
-            <div className="action-buttons">
-              <button onClick={handleNewTicket}>
-                <span className="icon">➕</span> Nouveau ticket
-              </button>
-              <button onClick={() => navigate('/tickets?filter=assigned')}>
-                <span className="icon">📝</span> Mes tickets
-              </button>
-              <button onClick={() => navigate('/reports/generate')}>
-                <span className="icon">📊</span> Générer un rapport
-              </button>
-              <button onClick={() => navigate('/settings/notifications')}>
-                <span className="icon">🔔</span> Gérer les notifications
-              </button>
-            </div>
-          </div>
+         
 
           <div className="my-tasks">
             <h2>Mes tâches ({userTasks.length})</h2>
@@ -350,8 +326,7 @@ const DashboardPage = () => {
                     <td>{ticket.assignee}</td>
                     <td>{new Date(ticket.created).toLocaleDateString('fr-FR')}</td>
                     <td className="actions">
-                      <button onClick={() => navigate(`/tickets/${ticket.id}`)} title="Voir les détails">👁️</button>
-                      <button onClick={() => handleQuickView(ticket)} title="Aperçu rapide">🔍</button>
+                    
                       <button onClick={() => handleRemindTicket(ticket.id)} title="Programmer un rappel">⏰</button>
                       <button onClick={() => handleCloseTicket(ticket.id)} title="Fermer le ticket">✅</button>
                       <div className="dropdown">

@@ -29,9 +29,9 @@ const LoginPage = () => {
       <Link to="/" className="back-link">← Retour à l'accueil</Link>
       
       <div className="login-container">
-        <div className="logo">
-          <img src="/logo.png" alt="TechTicket Logo" />
-          <h1>TechTicket</h1>
+      <div className='p1'>
+        <div className="logo"><h1>TechTicket</h1></div>
+          <div className='underline'></div>
         </div>
         
         <form onSubmit={handleSubmit}>

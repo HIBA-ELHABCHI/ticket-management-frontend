@@ -425,3 +425,30 @@
       padding: 20px;
     }
   }
+  
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --sidebar-bg: #f3f4f6;
+  --primary-color: #4a6cf7;
+  --secondary-color: #e2e8f0;
+  --border-color: #e2e8f0;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a202c;
+  --text-color: #f7fafc;
+  --sidebar-bg: #2d3748;
+  --primary-color: #6b8afc;
+  --secondary-color: #4a5568;
+  --border-color: #4a5568;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+}

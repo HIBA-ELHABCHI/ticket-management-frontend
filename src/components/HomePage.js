@@ -31,7 +31,6 @@ const HomePage = () => {
               <Link to="/login" className="login-btn">Commencer</Link>
             </div>
             <div className="hero-image">
-              <img src="/dashboard-preview.png" alt="Dashboard Preview" />
             </div>
           </div>
         </section>

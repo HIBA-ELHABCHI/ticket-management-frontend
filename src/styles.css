@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;400;600;700&display=swap');
 /* Styles généraux */
 * {
     margin: 0;
@@ -8,7 +9,32 @@
   
   body {
     background-color: #f5f5f5;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400; 
+
   }
+  h1 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700; /* غليظ */
+    font-size: 2.5rem; /* حجم كبير */
+    color: #333; /* لون غامق */
+  }
+  
+  p {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400; /* بين الرقيق والعادي */
+    font-size: 1.2rem; /* حجم متوسط */
+    line-height: 1.6; /* مسافة بين الأسطر */
+  }
+/* Styles généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  
   
   .container {
     max-width: 1200px;
@@ -38,14 +64,30 @@
     align-items: center;
   }
   
-  .logo img {
-    height: 40px;
-    margin-right: 10px;
+  
+  
+  .p1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
   }
   
+  
   .logo h1 {
-    font-size: 24px;
-    color: #2c3e50;
+    font-size: 48px;
+    color: #138fd6;
+    font-weight: 700;
+
+  }
+  .underline{
+    width: 61px;
+    height: 6px;
+    background:#138fd6 ;
+    border-radius: 9px;
+    
   }
   
   nav ul {
@@ -69,7 +111,7 @@
   }
   
   .login-btn {
-    background-color: #3498db;
+    background-color: #2957b9;
     color: white;
     padding: 10px 20px;
     border: none;
