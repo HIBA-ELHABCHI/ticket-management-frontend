@@ -107,8 +107,17 @@ const NewTicketsForm = () => {
       // Simuler un appel API
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      alert('Ticket créé avec succès !');
-      navigate('/dashboard');
+      // Navigate to dashboard and pass the new ticket data
+      navigate('/dashboard', { 
+        state: { 
+          newTicket: {
+            ...ticket,
+            priority: ticket.priority,
+            department: ticket.department,
+            problemType: ticket.problemType
+          } 
+        } 
+      });
       
     } catch (error) {
       console.error('Erreur lors de la création du ticket:', error);
@@ -117,6 +126,8 @@ const NewTicketsForm = () => {
       setIsSubmitting(false);
     }
   };
+
+  // Rest of the component remains the same
   
   const handleCancel = () => {
     navigate('/dashboard');
